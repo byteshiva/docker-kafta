@@ -20,7 +20,7 @@ ENV KAFKA_VERSION 0.9.0.1
 ENV KAFKA_HOME /opt/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION"
 
 RUN         apt-get update &&  \
-            apt-get install -y wget supervisor dnsutils curl openjdk-7-jdk openjdk-7-jre && \
+            apt-get install -y wget zookeeper supervisor dnsutils curl openjdk-8-jdk openjdk-8-jre && \
             rm -rf /var/lib/apt/lists/* && \
             apt-get clean && \
             wget -q http://apache.mirrors.spacedump.net/kafka/"$KAFKA_VERSION"/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION".tgz -O /tmp/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION".tgz && \
